@@ -8,8 +8,7 @@ from sklearn.manifold import TSNE
 from umap import UMAP
 
 import numpy as np
-from khot_embeddings import KHOT_EMBEDDINGS as khot
-from qmof_khot_embeddings import QMOF_KHOT_EMBEDDINGS as qmof
+from embeddings import KHOT_EMBEDDINGS as khot, QMOF_KHOT_EMBEDDINGS as qmof
 
 x = np.array(list(khot.values()))
 initializations = [['CGCNN', np.array(list(khot.values()))], ['QMOF', np.array(list(qmof.values())[:100])]]
@@ -18,7 +17,6 @@ transform = None
 n_components = 2
 
 seeds = [111, 121]
-embeddings = [['PCA', pca], ['T-SNE', tsne], ['UMAP', umap]]
 
 colors = [
     'bisque',
@@ -51,6 +49,7 @@ for seed in seeds:
     pca = PCA(n_components=n_components)
     tsne = TSNE(n_components=n_components, method='exact', random_state=rs)
     umap = UMAP(n_components=n_components, random_state=rs)
+    embeddings = [['PCA', pca], ['T-SNE', tsne], ['UMAP', umap]]
     for j, (embtitle, embedding) in enumerate(embeddings):
         # for k, (tratitle, transform) in enumerate(transforms):
         for k, (inittitle, x) in enumerate(initializations):

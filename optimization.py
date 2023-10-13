@@ -52,6 +52,6 @@ if not os.path.isfile(traj_name):
     dyn.run(fmax=0.05)
 
 traj = read(traj_name, index=':')
-# view(traj)  #, viewer='ngl')
+view(traj)  #, viewer='ngl')
 
-write(traj_name.replace('.traj', '.gif'), traj[30:-1:2], interval=100, rotation='-50x')
+# write(traj_name.replace('.traj', '.gif'), traj[30:-1:2], interval=100, rotation='-50x')

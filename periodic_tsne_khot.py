@@ -5,11 +5,10 @@ import numpy as np
 from sklearn import preprocessing
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-from umap import UMAP
+# from umap import UMAP
 
 import numpy as np
-from khot_embeddings import KHOT_EMBEDDINGS as khot
-from qmof_khot_embeddings import QMOF_KHOT_EMBEDDINGS as qmof
+from embeddings import KHOT_EMBEDDINGS as khot, QMOF_KHOT_EMBEDDINGS as qmof
 from ase.data import atomic_numbers, atomic_names
 import json
 
@@ -26,8 +25,8 @@ for seed in seeds:
     rs = np.random.RandomState(seed)
     pca = PCA(n_components=n_components)
     tsne = TSNE(n_components=n_components, method='exact', random_state=rs)
-    umap = UMAP(n_components=n_components, random_state=rs)
-    embeddings = [['PCA', pca], ['T-SNE', tsne], ['UMAP', umap]]
+    # umap = UMAP(n_components=n_components, random_state=rs)
+    embeddings = [['PCA', pca], ['T-SNE', tsne]]  # , ['UMAP', umap]]
 
     fig, axs = plt.subplots(len(initializations), len(embeddings))
     fig.set_size_inches(24., 13.)
@@ -72,5 +71,5 @@ for seed in seeds:
             print(title)
     fig.show()
     input()
-    # fig.savefig('images/tsne_elements_%d.png' % seed)
-    plt.close(fig)
+    fig.savefig('images/tsne_elements_%d.png' % seed)
+    # plt.close(fig)
