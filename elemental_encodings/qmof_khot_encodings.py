@@ -10,7 +10,7 @@ https://github.com/txie-93/cgcnn/issues/2
 https://github.com/arosen93/QMOF/issues/18
 """
 
-QMOF_KHOT_EMBEDDINGS = {
+QMOF_KHOT_ENCODINGS = {
     1: [
         1,
         0,

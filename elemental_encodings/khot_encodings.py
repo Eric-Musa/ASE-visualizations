@@ -5,10 +5,10 @@ This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.
 
 
-Original CGCNN k-hot elemental embeddings.
+Original CGCNN k-hot elemental encodings.
 """
 
-KHOT_EMBEDDINGS = {
+KHOT_ENCODINGS = {
     1: [
         0,
         1,

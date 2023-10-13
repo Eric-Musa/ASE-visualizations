@@ -6,9 +6,8 @@ from sklearn import preprocessing
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 # from umap import UMAP
-
 import numpy as np
-from embeddings import KHOT_EMBEDDINGS as khot, QMOF_KHOT_EMBEDDINGS as qmof
+from elemental_encodings import KHOT_ENCODINGS as khot, QMOF_KHOT_ENCODINGS as qmof
 from ase.data import atomic_numbers, atomic_names
 import json
 
@@ -70,6 +69,6 @@ for seed in seeds:
             ax.title.set_text(title)
             print(title)
     fig.show()
-    input()
+    # input()
     fig.savefig('images/tsne_elements_%d.png' % seed)
     # plt.close(fig)

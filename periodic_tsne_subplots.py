@@ -8,7 +8,7 @@ from sklearn.manifold import TSNE
 from umap import UMAP
 
 import numpy as np
-from embeddings import KHOT_EMBEDDINGS as khot, QMOF_KHOT_EMBEDDINGS as qmof
+from elemental_encodings import KHOT_ENCODINGS as khot, QMOF_KHOT_ENCODINGS as qmof
 
 x = np.array(list(khot.values()))
 initializations = [['CGCNN', np.array(list(khot.values()))], ['QMOF', np.array(list(qmof.values())[:100])]]

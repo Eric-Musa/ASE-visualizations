@@ -1,2 +1,0 @@
-from khot_embeddings import KHOT_EMBEDDINGS
-from qmof_khot_embeddings import QMOF_KHOT_EMBEDDINGS
